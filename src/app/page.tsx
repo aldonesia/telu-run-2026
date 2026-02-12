@@ -9,21 +9,26 @@ import Sponsors from '@/components/Sponsors';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Highlights from '@/components/Highlights';
+import WhatYouWillFind from '@/components/WhatYouWillFind';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
     <Navbar />
-    <Hero />           
+    <Hero />    
     <About />
-    <Highlights />         
-    <Events />         
+    <WhatYouWillFind />       
+    <Events />  
+    <Highlights />                
     <Timeline />       
     <Gallery />       
-    <Rules />          
+    <Rules />  
+
+
     {/* <Sponsors />       */}
     <Contact />  
     <Footer />
+
     </main>
   );
 }
