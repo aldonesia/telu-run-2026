@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 
 export default function Rules() {
-  // Inisialisasi state dengan array yang benar (bukan fill)
   const [expandedStates, setExpandedStates] = useState<boolean[]>([false, false, false, false, false, false]);
 
   const toggleSection = (index: number) => {
@@ -146,7 +145,6 @@ export default function Rules() {
           </p>
         </div>
 
-        {/* Horizontal Layout - 3 columns on desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto items-start">
           {rulesData.map((section, index) => (
             <div
@@ -225,7 +223,6 @@ export default function Rules() {
           ))}
         </div>
 
-        {/* Important Notice - Compact */}
         <div className="mt-8 max-w-4xl mx-auto">
           <div className="relative bg-gradient-to-br from-[#450099] via-[#9C2163] to-[#FF0020] text-white p-5 rounded-xl overflow-hidden shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>

@@ -58,7 +58,6 @@ export default function Timeline() {
           </p>
         </div>
 
-        {/* Desktop View */}
         <div className="hidden lg:block relative">
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] transform -translate-y-1/2 opacity-30"></div>
 
@@ -93,7 +92,6 @@ export default function Timeline() {
           </div>
         </div>
 
-        {/* Mobile View */}
         <div className="lg:hidden relative">
           <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-[#450099] via-[#9C2163] to-[#FF0020] opacity-30"></div>
 
@@ -134,7 +132,6 @@ export default function Timeline() {
           </div>
         </div>
 
-        {/* Legend */}
         <div className="flex justify-center gap-8 mt-8 flex-wrap">
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 bg-[#450099] rounded-full"></div>

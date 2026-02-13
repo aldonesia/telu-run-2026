@@ -151,7 +151,6 @@ export default function Events() {
                     {event.description}
                   </p>
 
-                  {/* Requirements Section */}
                   <div className="space-y-3 mb-6">
                     {event.requirements.map((req, idx) => (
                       <div 

@@ -24,7 +24,7 @@ export default function Contact() {
     },
   ];
 
-  const whatsappNumber = '6281252255258';
+  const whatsappNumber = '6281230350677';
   const whatsappMessage = 'Halo, saya ingin bertanya tentang Tel-U Run 2026';
   const encodedMessage = encodeURIComponent(whatsappMessage);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;

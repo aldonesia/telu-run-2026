@@ -38,7 +38,6 @@ export default function About() {
 
   const youtubeVideoId = '8kQkLf3BuzY';
 
-  // Event Information
   const eventInfo = {
     date: '07 Desember 2026',
     time: '06.00 - 11.00 WIB',
@@ -101,7 +100,6 @@ export default function About() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
               <div className="absolute inset-0 bg-gradient-to-br from-[#450099]/3 via-[#9C2163]/3 to-[#FF0020]/3"></div>
               
-              {/* YouTube Video */}
               <div className="relative aspect-video bg-black">
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&loop=1&playlist=${youtubeVideoId}&rel=0&modestbranding=1`}
@@ -130,7 +128,6 @@ export default function About() {
                   </div>
                 </div>
 
-                {/* Saksikan Momen */}
                 <div className="bg-gradient-to-r from-[#450099]/5 to-[#FF0020]/5 rounded-xl p-4 border border-gray-100 mb-4">
                   <p className="text-gray-700 text-sm leading-relaxed">
                     Saksikan momen seru dan inspiratif dari Tel-U Run 2026 yang diselenggarakan 
@@ -139,7 +136,6 @@ export default function About() {
                   </p>
                 </div>
 
-                {/* Event Info - Simple & Clean */}
                 <div className="space-y-3">
                   <div className="flex items-start gap-3 p-3 bg-gradient-to-r from-[#450099]/5 to-[#FF0020]/5 rounded-lg">
                     <Calendar className="text-[#450099] flex-shrink-0 mt-0.5" size={18} />

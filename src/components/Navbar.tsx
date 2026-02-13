@@ -49,7 +49,7 @@ export default function Navbar() {
   const navHoverClass = isScrolled 
     ? 'hover:text-[#450099]' 
     : 'hover:text-white/90';
-  const mobileMenuBgClass = isScrolled ? 'bg-white' : 'bg-[#450099]/95 backdrop-blur-sm'; // ✅ Perbaikan latar belakang menu mobile
+  const mobileMenuBgClass = isScrolled ? 'bg-white' : 'bg-[#450099]/95 backdrop-blur-sm'; 
 
   return (
     <>
@@ -119,7 +119,7 @@ export default function Navbar() {
         <div className={`w-11/12 mx-auto fixed left-1/2 -translate-x-1/2 top-28 z-[998] rounded-2xl shadow-2xl border py-6 px-5 md:hidden transition-all duration-300 ${
           isScrolled 
             ? 'bg-white border-gray-100' 
-            : 'bg-[#450099]/95 backdrop-blur-sm border-[#450099]/50' // ✅ Perbaikan latar belakang
+            : 'bg-[#450099]/95 backdrop-blur-sm border-[#450099]/50' 
         }`}>
           {navItems.map((item) => (
             <a
@@ -129,7 +129,7 @@ export default function Navbar() {
               className={`block px-6 py-4 font-poppins font-semibold text-lg transition-all duration-300 rounded-xl ${
                 isScrolled
                   ? 'text-gray-800 hover:bg-gradient-to-r hover:from-[#450099]/10 hover:via-[#9C2163]/10 hover:to-[#FF0020]/10 hover:text-[#450099]'
-                  : 'text-white hover:bg-[#450099]/10 hover:text-white' // ✅ Perbaikan warna teks
+                  : 'text-white hover:bg-[#450099]/10 hover:text-white' 
               }`}
             >
               {item.name}
@@ -140,7 +140,7 @@ export default function Navbar() {
             className={`w-full mt-2 font-poppins font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg ${
               isScrolled
                 ? 'bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] text-white hover:opacity-90 hover:shadow-2xl'
-                : 'bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] text-white hover:opacity-90 hover:shadow-2xl' // ✅ Pertahankan warna konsisten
+                : 'bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] text-white hover:opacity-90 hover:shadow-2xl' 
             }`}
             onClick={() => {
               window.location.href = '#contact';

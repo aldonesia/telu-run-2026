@@ -26,7 +26,7 @@ export default function Home() {
 
 
     {/* <Sponsors />       */}
-    <Contact />  
+    {/* <Contact />   */}
     <Footer />
 
     </main>

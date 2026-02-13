@@ -37,7 +37,6 @@ export default function Highlights() {
   return (
     <section id="highlights" className="py-20 bg-gradient-to-b from-white via-purple-50 to-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
         <div className="text-center mb-12 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#450099]/10 to-[#FF0020]/10 rounded-full mb-4 mx-auto">
             <Star size={18} className="text-[#FF0020]" />
@@ -55,7 +54,6 @@ export default function Highlights() {
           </p>
         </div>
 
-        {/* Highlights Grid - Horizontal Layout (4 columns) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {highlights.map((item, index) => {
             const Icon = item.icon;
@@ -65,18 +63,15 @@ export default function Highlights() {
                 className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden flex flex-col h-full"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Background Gradient Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                 
                 <div className="relative p-6 flex flex-col">
-                  {/* Icon Container - Compact */}
                   <div className="mb-4 flex-shrink-0">
                     <div className={`w-14 h-14 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className="text-white" size={24} strokeWidth={1.8} />
                     </div>
                   </div>
                   
-                  {/* Content */}
                   <div className="flex flex-col">
                     <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-[#450099] transition-colors duration-300">
                       {item.title}
