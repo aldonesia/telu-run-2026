@@ -7,33 +7,29 @@ export default function Timeline() {
     {
       icon: Rocket,
       title: 'Open Registration',
-      date: '1 Desember 2025 - 15 Februari 2026',
+      date: '1 Maret 2026 - 15 Juli 2026',
       description: 'Pendaftaran dibuka untuk Fun Run 5K dan Fun Walk 3K. Dapatkan harga early bird jika mendaftar sebelum 10 Januari 2026!',
-      status: 'completed',
       color: '#450099',
     },
     {
       icon: Calendar,
       title: 'Race Pack Collection',
-      date: '20 - 25 Februari 2026',
+      date: '31 Juli - 1 Agustus 2026',
       description: 'Pengambilan race pack di Telkom University Surabaya. Race pack berisi BIB number, goodie bag, merchandise eksklusif, dan informasi lengkap event.',
-      status: 'current',
       color: '#9C2163',
     },
     {
       icon: CheckCircle,
       title: 'Event Day',
-      date: '28 Februari 2026',
+      date: '02 Agustus 2026',
       description: 'Hari H Tel-U Run 2026! Start pukul 06.00 WIB. Fun Run 5K, Fun Walk 3K, dan Community Activity. Sertakan semangat dan energi positif Anda!',
-      status: 'upcoming',
       color: '#FF0020',
     },
     {
       icon: Trophy,
       title: 'Awarding Ceremony',
-      date: '28 Februari 2026 (11.00 WIB)',
+      date: '02 Agustus 2026 (09.00 WIB)',
       description: 'Pengumuman pemenang, pembagian medali finisher, sertifikat digital, dan doorprize menarik. Semua peserta berhak mendapatkan merchandise eksklusif.',
-      status: 'upcoming',
       color: '#FF0020',
     },
   ];
@@ -102,7 +98,7 @@ export default function Timeline() {
                 <div key={index} className="relative pl-24 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
                   <div className="absolute left-5 top-8 transform -translate-x-1/2">
                     <div className="relative">
-                      <div className={`w-8 h-8 bg-gradient-to-br from-[#450099] via-[#9C2163] to-[#FF0020] rounded-full border-4 border-white shadow-lg ${event.status === 'current' ? 'animate-pulse' : ''}`}></div>
+                      <div className={`w-8 h-8 bg-gradient-to-br from-[#450099] via-[#9C2163] to-[#FF0020] rounded-full border-4 border-white shadow-lg`}></div>
                       <div className="absolute inset-0 bg-white/20 rounded-full blur-sm animate-ping"></div>
                     </div>
                   </div>
@@ -129,21 +125,6 @@ export default function Timeline() {
                 </div>
               );
             })}
-          </div>
-        </div>
-
-        <div className="flex justify-center gap-8 mt-8 flex-wrap">
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-[#450099] rounded-full"></div>
-            <span className="text-sm text-gray-700 font-medium">Completed</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-[#9C2163] rounded-full animate-pulse"></div>
-            <span className="text-sm text-gray-700 font-medium">In Progress</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-[#FF0020] rounded-full"></div>
-            <span className="text-sm text-gray-700 font-medium">Upcoming</span>
           </div>
         </div>
       </div>

@@ -28,10 +28,17 @@ export default function Footer() {
     { name: 'FAQ', href: '#faq' },
   ];
 
-  
+  const whatsappNumber = '6281230350677';
+  const whatsappMessage = 'Halo, saya ingin bertanya tentang Tel-U Run 2026. Mohon informasi lebih lanjut.';
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+  const email = 'nuevalenalswando@gmail.com';
+  const instagramLink = 'https://www.instagram.com/motion_festival/';
+  const youtubeLink = 'https://www.youtube.com/@Telkomuniversity_Surabaya';
 
   return (
-    <footer className="bg-gradient-to-r from-purple-900 via-pink-900 to-purple-900 text-white border-t border-purple-800 overflow-hidden relative">
+    <footer className="bg-linear-to-r from-purple-900 via-pink-900 to-purple-900 text-white border-t border-purple-800 overflow-hidden relative">
       <div className="absolute inset-0 opacity-15">
         <div className="w-48 h-48 rounded-full bg-pink-600 absolute -top-24 -left-24 animate-bounce-slow"></div>
         <div className="w-40 h-40 rounded-full bg-purple-600 absolute -bottom-20 -right-20 animate-bounce-slow delay-1000"></div>
@@ -77,8 +84,6 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-
-            
           </div>
 
           <div className="space-y-6">
@@ -89,7 +94,7 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 <li className="text-purple-100">
-                  <span className="font-medium text-white">📅 Weak Day:</span> 08:00 - 15:00 WIB
+                  <span className="font-medium text-white">📅 Week Day:</span> 08:00 - 15:00 WIB
                 </li>
                 <li className="text-purple-100">
                   <span className="font-medium text-white">📆 Hari Libur:</span> Sabtu & Minggu
@@ -99,47 +104,80 @@ export default function Footer() {
           </div>
 
           <div className="space-y-6">
-            
             <div>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <Mail size={18} className="text-purple-300" />
                 Hubungi Kami
               </h3>
               
               <div className="space-y-3">
                 <a 
-                  href="mailto:info@telurun2026.ac.id" 
+                  href={`mailto:${email}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-start gap-3 group"
                 >
                   <Mail size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
                   <div>
                     <p className="text-purple-100 text-xs">Email</p>
-                    <p className="text-white group-hover:text-pink-300 transition-colors text-sm">
-                      info@telurun2026.ac.id
+                    <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
+                      {email}
                     </p>
                   </div>
                 </a>
                 
                 <a 
-                  href="tel:+623112345678" 
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-start gap-3 group"
                 >
                   <Phone size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
                   <div>
                     <p className="text-purple-100 text-xs">Telepon</p>
-                    <p className="text-white group-hover:text-pink-300 transition-colors text-sm">
-                      +62 31 1234 5678
+                    <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
+                      +62 812 3035 0677
                     </p>
                   </div>
                 </a>
+
               </div>
 
               <div className="mt-5">
                 <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                  <Instagram size={18} className="text-purple-300" />
                   Media Sosial
                 </h4>
                 
+                <div className="flex gap-3">
+                  <a 
+                        href={instagramLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-start gap-3 group"
+                      >
+                        <Instagram size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
+                        <div>
+                          <p className="text-purple-100 text-xs">Instagram</p>
+                          <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
+                            @motion_festival
+                          </p>
+                        </div>
+                      </a>
+
+                      <a 
+                        href={youtubeLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-start gap-3 group"
+                      >
+                        <Youtube size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
+                        <div>
+                          <p className="text-purple-100 text-xs">YouTube</p>
+                          <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
+                            Telkom University Surabaya
+                          </p>
+                        </div>
+                      </a>
+                </div>
               </div>
             </div>
           </div>
@@ -154,12 +192,9 @@ export default function Footer() {
               Designed with ❤️ by ValenNz • Powered by Telkom University Surabaya
             </p>
           </div>
-          
-          
         </div>
       </div>
 
-      
     </footer>
   );
 }
