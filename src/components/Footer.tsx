@@ -16,23 +16,24 @@ import {
   ChevronRight,
   ChevronLeft
 } from 'lucide-react';
-import { useState, useEffect } from 'react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'Tentang Kami', href: '#about' },
-    { name: 'Events', href: '#events' },
-    { name: 'Galeri', href: '#gallery' },
+    { name: 'Tentang Race', href: '#about' },
+    { name: 'Kategori Race', href: '#events' },
+    { name: 'Benefit Peserta', href: '#highlights' },
     { name: 'FAQ', href: '#faq' },
   ];
 
-  const whatsappNumber = '6281230350677';
+  // ✅ Fixed: Hapus spasi di URL WhatsApp
+  const whatsappNumber = '6285760621999';
   const whatsappMessage = 'Halo, saya ingin bertanya tentang Tel-U Run 2026. Mohon informasi lebih lanjut.';
   const encodedMessage = encodeURIComponent(whatsappMessage);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
+  // ✅ Fixed: Hapus spasi di akhir URL
   const email = 'nuevalenalswando@gmail.com';
   const instagramLink = 'https://www.instagram.com/motion_festival/';
   const youtubeLink = 'https://www.youtube.com/@Telkomuniversity_Surabaya';
@@ -48,13 +49,15 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 py-12 relative z-10">
   
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+          {/* Brand Section */}
           <div className="space-y-5">
             <div className="space-y-2">
               <div className="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-pink-300 to-purple-300">
                 Tel-U Run 2026
               </div>
               <p className="text-purple-100 text-sm leading-relaxed">
-                Satu hari. Satu ruang. Ribuan energi. Bergabunglah dalam event lari terbesar di Surabaya!
+                Official running race oleh Telkom University Surabaya. 
+                Tantang batas diri, raih target pribadi, rayakan pencapaian!
               </p>
             </div>
 
@@ -64,11 +67,12 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Quick Links */}
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <MessageSquare size={18} className="text-purple-300" />
-                Quick Links
+                Navigasi
               </h3>
               <ul className="space-y-2.5">
                 {quickLinks.map((link, index) => (
@@ -86,23 +90,28 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Event Info */}
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <Clock size={18} className="text-purple-300" />
-                Jam Operasional
+                Info Event
               </h3>
               <ul className="space-y-3">
                 <li className="text-purple-100">
-                  <span className="font-medium text-white">📅 Week Day:</span> 08:00 - 15:00 WIB
+                  <span className="font-medium text-white">🏃 Race Day:</span> 2 Agustus 2026
                 </li>
                 <li className="text-purple-100">
-                  <span className="font-medium text-white">📆 Hari Libur:</span> Sabtu & Minggu
+                  <span className="font-medium text-white">⏰ Start Time:</span> 06.00 WIB
+                </li>
+                <li className="text-purple-100">
+                  <span className="font-medium text-white">📍 Location:</span> Tel-U Surabaya
                 </li>
               </ul>
             </div>
           </div>
 
+          {/* Contact Section */}
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -133,56 +142,57 @@ export default function Footer() {
                 >
                   <Phone size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
                   <div>
-                    <p className="text-purple-100 text-xs">Telepon</p>
+                    <p className="text-purple-100 text-xs">WhatsApp</p>
                     <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
-                      +62 812 3035 0677
+                      +62 857 6062 1999
                     </p>
                   </div>
                 </a>
-
               </div>
 
+              {/* Social Media */}
               <div className="mt-5">
                 <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                   Media Sosial
                 </h4>
                 
-                <div className="flex gap-3">
+                <div className="flex flex-col gap-3">
                   <a 
-                        href={instagramLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-start gap-3 group"
-                      >
-                        <Instagram size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
-                        <div>
-                          <p className="text-purple-100 text-xs">Instagram</p>
-                          <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
-                            @motion_festival
-                          </p>
-                        </div>
-                      </a>
+                    href={instagramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 group"
+                  >
+                    <Instagram size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
+                    <div>
+                      <p className="text-purple-100 text-xs">Instagram</p>
+                      <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
+                        @motion_festival
+                      </p>
+                    </div>
+                  </a>
 
-                      <a 
-                        href={youtubeLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-start gap-3 group"
-                      >
-                        <Youtube size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
-                        <div>
-                          <p className="text-purple-100 text-xs">YouTube</p>
-                          <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
-                            Telkom University Surabaya
-                          </p>
-                        </div>
-                      </a>
+                  <a 
+                    href={youtubeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 group"
+                  >
+                    <Youtube size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
+                    <div>
+                      <p className="text-purple-100 text-xs">YouTube</p>
+                      <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
+                        Telkom University Surabaya
+                      </p>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="pt-6 border-t border-purple-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
             <p className="text-purple-100 text-sm mb-2">
@@ -194,7 +204,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
     </footer>
   );
 }

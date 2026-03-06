@@ -13,7 +13,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Telepon',
-      content: '+62 812-5225-5258',
+      content: '6285760621999',
       subContent: 'Senin - Jumat, 09:00 - 17:00',
     },
     {
@@ -24,8 +24,8 @@ export default function Contact() {
     },
   ];
 
-  const whatsappNumber = '6281230350677';
-  const whatsappMessage = 'Halo, saya ingin bertanya tentang Tel-U Run 2026';
+  const whatsappNumber = '6285760621999';
+  const whatsappMessage = 'Halo, saya ingin bertanya tentang Tel-U Run';
   const encodedMessage = encodeURIComponent(whatsappMessage);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
@@ -134,7 +134,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block w-full py-4 bg-gradient-to-r from-[#450099] to-[#FF0020] text-white font-semibold rounded-xl hover:shadow-md hover:scale-[1.02] transition-all duration-300 active:scale-[0.98]"
-                aria-label="Buka form pendaftaran Tel-U Run 2026"
+                aria-label="Buka form pendaftaran Tel-U Run"
               >
                 <span className="flex items-center justify-center gap-2">
                   <span>Buka Form Pendaftaran</span>
@@ -162,7 +162,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block w-full py-4 bg-green-500 text-white font-semibold rounded-xl hover:bg-green-600 hover:shadow-md hover:scale-[1.02] transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-2"
-                aria-label="Chat via WhatsApp untuk informasi Tel-U Run 2026"
+                aria-label="Chat via WhatsApp untuk informasi Tel-U Run"
               >
                 <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
                 <span>Chat WhatsApp Sekarang</span>

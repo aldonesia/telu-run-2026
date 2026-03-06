@@ -1,16 +1,63 @@
 'use client';
 
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Calendar, Clock } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import Link from 'next/link'; 
+
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
 
 export default function Hero() {
   const [isMounted, setIsMounted] = useState(false);
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  const eventDate = new Date('2026-08-02T00:00:00').getTime();
+  const registrationLink = 'https://galanesia.com/events/tel-u-run-2026/';
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
+
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime();
+      const difference = eventDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, [eventDate]);
+
+  const TimeUnit = ({ value, label }: { value: number; label: string }) => (
+    <div className="flex flex-col items-center">
+      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 flex items-center justify-center mb-2 shadow-lg">
+        <span className="text-2xl sm:text-3xl font-bold text-white">
+          {String(value).padStart(2, '0')}
+        </span>
+      </div>
+      <span className="text-xs sm:text-sm text-white/80 font-medium">{label}</span>
+    </div>
+  );
 
   return (
     <section
@@ -20,7 +67,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero1.png"
-          alt="Tel-U Run 2026 Background"
+          alt="Tel-U Run Background"
           fill
           className="object-cover object-position-bottom"
           style={{ objectPosition: 'center bottom' }}
@@ -74,20 +121,47 @@ export default function Hero() {
             Satu hari. Satu ruang. Ribuan energi.
           </p>
 
+          {/* Countdown Timer */}
+          <div className="mb-12">
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white border border-white/20 mb-6">
+              <Calendar className="w-5 h-5" />
+              <span className="text-sm font-medium">2 Agustus 2026</span>
+            </div>
+            
+            <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4">
+              <TimeUnit value={timeLeft.days} label="Hari" />
+              <span className="text-3xl sm:text-4xl font-bold text-white/50 mt-4">:</span>
+              <TimeUnit value={timeLeft.hours} label="Jam" />
+              <span className="text-3xl sm:text-4xl font-bold text-white/50 mt-4">:</span>
+              <TimeUnit value={timeLeft.minutes} label="Menit" />
+              <span className="text-3xl sm:text-4xl font-bold text-white/50 mt-4">:</span>
+              <TimeUnit value={timeLeft.seconds} label="Detik" />
+            </div>
+            
+            <div className="flex items-center justify-center gap-2 text-white/70 text-sm">
+              <Clock className="w-4 h-4" />
+              <span>Menuju Acara Besar</span>
+            </div>
+          </div>
+
+          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            {/* Daftar Sekarang - External Link */}
             <a
-              href="#events"
+              href={registrationLink}
+              target="_blank"
               rel="noopener noreferrer"
-              className="group px-7 py-3.5 bg-white text-[#450099] font-bold text-base rounded-full hover:bg-white/95 transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2"
+              className="group px-7 py-3.5 bg-white text-[#450099] font-bold text-base rounded-full hover:bg-white/95 transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
               aria-label="Daftar Tel-U Run 2026"
             >
               Daftar Sekarang
               <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={20} />
             </a>
 
+            {/* Lihat Event - Internal Anchor Link */}
             <a
               href="#events"
-              className="px-7 py-3.5 bg-white/10 backdrop-blur-sm text-white font-bold text-base rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20 flex items-center gap-2 group"
+              className="px-7 py-3.5 bg-white/10 backdrop-blur-sm text-white font-bold text-base rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20 flex items-center justify-center gap-2 group"
               aria-label="Lihat daftar event Tel-U Run 2026"
             >
               <Play size={20} />

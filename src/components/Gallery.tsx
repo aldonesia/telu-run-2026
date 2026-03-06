@@ -49,7 +49,7 @@ export default function Gallery() {
               </span>
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-              Lihat momen-momen berharga dari Tel-U Run 2026 sebelumnya
+              Lihat momen-momen berharga dari Tel-U Run sebelumnya
             </p>
           </div>
 
@@ -141,7 +141,7 @@ export default function Gallery() {
                 
                 <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
                   <Star size={20} className="text-[#FF0020]" />
-                  <span className="text-white font-medium">Tel-U Run 2026</span>
+                  <span className="text-white font-medium">Tel-U Run</span>
                 </div>
               </div>
             </div>

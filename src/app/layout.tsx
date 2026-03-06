@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/logo.png", sizes: "180x180", type: "image/png" }],
   },
   title: "Tel-U Run 2026 - Satu hari. Satu ruang. Ribuan energi.",
-  description: "Join Tel-U Run 2026 - a community event promoting healthy living, togetherness, and celebration. Features Fun Run, Fun Walk, and exciting community activities.",
+  description: "Join Tel-U Run 2026- a community event promoting healthy living, togetherness, and celebration. Features Fun Run, Fun Walk, and exciting community activities.",
   keywords: ["Tel-U Run 2026", "fun run", "fun walk", "community event", "healthy living", "sports event"],
   authors: [{ name: "Tel-U Run 2026 Team" }],
   openGraph: {

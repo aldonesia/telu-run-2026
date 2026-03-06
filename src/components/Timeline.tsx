@@ -1,35 +1,35 @@
 'use client';
 
-import { Calendar, CheckCircle, Trophy, Rocket, Star } from 'lucide-react';
+import { Calendar, CheckCircle, Trophy, Rocket, Star, Package, Medal } from 'lucide-react';
 
 export default function Timeline() {
   const timelineEvents = [
     {
       icon: Rocket,
-      title: 'Open Registration',
-      date: '1 Maret 2026 - 15 Juli 2026',
-      description: 'Pendaftaran dibuka untuk Fun Run 5K dan Fun Walk 3K. Dapatkan harga early bird jika mendaftar sebelum 10 Januari 2026!',
+      title: 'Early Bird Registration',
+      date: '09 Maret-01 April 2026',
+      description: 'Pendaftaran dibuka untuk 5K Race dan 10K Race. Dapatkan harga spesial Early Bird jika mendaftar dalam periode ini!',
       color: '#450099',
     },
     {
-      icon: Calendar,
+      icon: Package,
       title: 'Race Pack Collection',
       date: '31 Juli - 1 Agustus 2026',
-      description: 'Pengambilan race pack di Telkom University Surabaya. Race pack berisi BIB number, goodie bag, merchandise eksklusif, dan informasi lengkap event.',
+      description: 'Pengambilan Race Pack di Telkom University Surabaya. Berisi BIB Number, Timing Chip, Official Jersey, dan informasi lengkap event.',
       color: '#9C2163',
     },
     {
       icon: CheckCircle,
-      title: 'Event Day',
-      date: '02 Agustus 2026',
-      description: 'Hari H Tel-U Run 2026! Start pukul 06.00 WIB. Fun Run 5K, Fun Walk 3K, dan Community Activity. Sertakan semangat dan energi positif Anda!',
+      title: 'Race Day',
+      date: '02 Agustus 2026 | 06.00 WIB',
+      description: 'Hari H Tel-U Run 2026! Start pukul 06.00 WIB. 5K Race dan 10K Race dengan rute profesional. Sertakan semangat dan energi positif Anda!',
       color: '#FF0020',
     },
     {
       icon: Trophy,
-      title: 'Awarding Ceremony',
-      date: '02 Agustus 2026 (09.00 WIB)',
-      description: 'Pengumuman pemenang, pembagian medali finisher, sertifikat digital, dan doorprize menarik. Semua peserta berhak mendapatkan merchandise eksklusif.',
+      title: 'Finish & Awards',
+      date: '02 Agustus 2026 | Selesai Race',
+      description: 'Pembagian Finisher Medal untuk semua peserta, E-Certificate digital, dan Awarding Ceremony untuk pemenang kategori 5K & 10K Race.',
       color: '#FF0020',
     },
   ];
@@ -45,7 +45,7 @@ export default function Timeline() {
           
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020]">
-              Perjalanan Kami
+              Timeline Event
             </span>
           </h2>
           
@@ -54,6 +54,7 @@ export default function Timeline() {
           </p>
         </div>
 
+        {/* DESKTOP VIEW - Layout tetap sama */}
         <div className="hidden lg:block relative">
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] transform -translate-y-1/2 opacity-30"></div>
 
@@ -88,6 +89,7 @@ export default function Timeline() {
           </div>
         </div>
 
+        {/* MOBILE VIEW - Layout tetap sama */}
         <div className="lg:hidden relative">
           <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-[#450099] via-[#9C2163] to-[#FF0020] opacity-30"></div>
 

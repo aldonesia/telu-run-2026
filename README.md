@@ -1,4 +1,4 @@
-# Tel-U Run 2026 - Landing Page
+# Tel-U Run - Landing Page
 
 Website landing page modern dan interaktif untuk acara Tel-U Run 2026 menggunakan Next.js 15 dengan App Router.
 
