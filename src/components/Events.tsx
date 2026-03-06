@@ -4,7 +4,6 @@ import { Activity, Users, Clock, MapPin, Star, Tag, Calendar, ArrowRight, Footpr
 import Image from 'next/image'; 
 
 export default function Events() {
-  // ✅ FIX: Hapus spasi di akhir URL
   const registrationLink = 'https://galanesia.com/events/tel-u-run-2026/';
   
   const races = [
@@ -66,7 +65,6 @@ export default function Events() {
     <section id="events" className="py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* HEADER */}
         <div className="text-center mb-12 lg:mb-16 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#450099]/10 to-[#FF0020]/10 rounded-full mb-4 mx-auto">
             <Star size={18} className="text-[#FF0020]" />
@@ -86,7 +84,6 @@ export default function Events() {
           </p>
         </div>
 
-        {/* EVENT GRID */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {races.map((race, index) => {
             const imagePath = getImagePath(race.title);
@@ -96,12 +93,10 @@ export default function Events() {
                 key={index}
                 className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:-translate-y-1 border border-gray-100 flex flex-col"
               >
-                {/* HOVER BACKGROUND */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${race.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`}
                 ></div>
 
-                {/* IMAGE HEADER */}
                 <div className="h-48 relative overflow-hidden flex-shrink-0">
                   <Image
                     src={imagePath}
@@ -111,12 +106,10 @@ export default function Events() {
                     priority={index === 0}
                   />
                   
-                  {/* Gradient Overlay */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${race.gradient} opacity-60 pointer-events-none`}
                   ></div>
 
-                  {/* BADGE */}
                   <div className="absolute top-4 right-4 z-10 pointer-events-none">
                     <span
                       className={`${race.badgeColor} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1`}
@@ -126,7 +119,6 @@ export default function Events() {
                     </span>
                   </div>
 
-                  {/* ICON */}
                   <div className="flex items-center justify-center h-full relative z-10 pointer-events-none">
                     <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/40">
                       <race.icon className="text-white" size={48} />
@@ -134,9 +126,7 @@ export default function Events() {
                   </div>
                 </div>
 
-                {/* CONTENT */}
                 <div className="p-6 flex flex-col flex-grow">
-                  {/* Title & Short Desc */}
                   <div className="mb-4">
                     <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#450099] transition-colors duration-300">
                       {race.title}
@@ -146,12 +136,10 @@ export default function Events() {
                     </p>
                   </div>
 
-                  {/* Description */}
                   <p className="text-gray-600 mb-5 leading-relaxed text-sm">
                     {race.description}
                   </p>
 
-                  {/* Race Specs */}
                   <div className="flex flex-wrap gap-3 mb-5">
                     <span className="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs font-semibold rounded-lg">
                       📏 {race.distance}
@@ -168,7 +156,6 @@ export default function Events() {
                     </span>
                   </div>
 
-                  {/* Price Box */}
                   <div className="mb-6 p-4 bg-gradient-to-r from-[#450099]/5 to-[#FF0020]/5 rounded-xl border border-[#450099]/10 flex-shrink-0">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
@@ -190,7 +177,6 @@ export default function Events() {
                     </p>
                   </div>
 
-                  {/* Event Info */}
                   <div className="flex items-center gap-4 text-sm text-gray-600 mb-6 pb-4 border-b border-gray-100 flex-shrink-0">
                     <div className="flex items-center gap-1.5">
                       <Clock size={16} className="text-[#9C2163] flex-shrink-0" />
@@ -202,7 +188,6 @@ export default function Events() {
                     </div>
                   </div>
 
-                  {/* Register Button */}
                   <div className="mt-auto relative z-10">
                     <a
                       href={registrationLink}
@@ -220,7 +205,6 @@ export default function Events() {
                   </div>
                 </div>
 
-                {/* BOTTOM BORDER */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </div>
             );

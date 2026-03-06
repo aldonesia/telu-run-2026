@@ -13,7 +13,6 @@ import {
 } from 'lucide-react';
 
 export default function Highlights() {
-  // ✅ Updated sesuai revisi: Benefit Peserta yang lengkap
   const highlights = [
     {
       icon: Shirt,
@@ -37,7 +36,6 @@ export default function Highlights() {
       color: '#450099',
     },
     
-    // 🏃 DURING RACE: Support & Safety
     {
       icon: Droplet,
       title: 'Refreshment',
@@ -53,7 +51,6 @@ export default function Highlights() {
       color: '#450099',
     },
     
-    // 🏆 AFTER RACE: Rewards & Recognition
     {
       icon: Medal,
       title: 'Finisher Medal',
@@ -80,7 +77,6 @@ export default function Highlights() {
   return (
     <section id="highlights" className="py-16 lg:py-20 bg-gradient-to-b from-white via-purple-50 to-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* HEADER */}
         <div className="text-center mb-12 lg:mb-16 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#450099]/10 to-[#FF0020]/10 rounded-full mb-4 mx-auto">
             <Star size={18} className="text-[#FF0020]" />
@@ -100,7 +96,6 @@ export default function Highlights() {
           </p>
         </div>
 
-        {/* GRID - 2 kolom di mobile, 4 kolom di desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {highlights.map((item, index) => {
             const Icon = item.icon;
@@ -110,18 +105,15 @@ export default function Highlights() {
                 className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden flex flex-col h-full"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Hover Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                 
                 <div className="relative p-6 flex flex-col flex-grow">
-                  {/* Icon */}
                   <div className="mb-4 flex-shrink-0">
                     <div className={`w-14 h-14 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className="text-white" size={26} strokeWidth={2} />
                     </div>
                   </div>
                   
-                  {/* Content */}
                   <div className="flex flex-col flex-grow">
                     <h3 className="text-lg font-bold mb-2 text-gray-900 group-hover:text-[#450099] transition-colors duration-300">
                       {item.title}
@@ -133,7 +125,6 @@ export default function Highlights() {
                   </div>
                 </div>
 
-                {/* Bottom Border on Hover */}
                 <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
               </div>
             );

@@ -13,7 +13,6 @@ import {
 } from 'lucide-react';
 
 export default function About() {
-  // 🎯 Race Values - Updated to reflect competitive running race
   const raceValues = [
     {
       icon: Target,
@@ -55,7 +54,6 @@ export default function About() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          {/* Left Column: Content */}
           <div className="space-y-8">
             <div className="text-center lg:text-left mb-8">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#450099]/10 to-[#FF0020]/10 rounded-full mb-4 mx-auto lg:mx-0">
@@ -69,7 +67,6 @@ export default function About() {
                 </span>
               </h2>
               
-              {/* ✅ Updated Description - Sesuai brief */}
               <p className="text-lg text-gray-700 mb-4 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Tel-U Run adalah <strong>official running race</strong> yang diselenggarakan oleh 
                 Telkom University Surabaya. Event ini menghadirkan pengalaman lari kompetitif 
@@ -83,7 +80,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Race Values Cards */}
             <div className="space-y-4">
               {raceValues.map((value, index) => (
                 <div
@@ -111,12 +107,10 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column: Video & Event Info */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
               <div className="absolute inset-0 bg-gradient-to-br from-[#450099]/3 via-[#9C2163]/3 to-[#FF0020]/3"></div>
               
-              {/* ✅ Fixed: Removed extra spaces in YouTube URL */}
               <div className="relative aspect-video bg-black">
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&loop=1&playlist=${youtubeVideoId}&rel=0&modestbranding=1`}
@@ -186,7 +180,6 @@ export default function About() {
               </div>
             </div>
 
-            {/* Decorative Glow Effects */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-[#450099] to-[#FF0020] rounded-full blur-2xl opacity-30 animate-pulse"></div>
             <div className="absolute -bottom-6 -left-6 w-28 h-28 bg-gradient-to-br from-[#9C2163] to-[#FF0020] rounded-full blur-2xl opacity-30 animate-pulse delay-500"></div>
           </div>

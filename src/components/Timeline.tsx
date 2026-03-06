@@ -54,7 +54,6 @@ export default function Timeline() {
           </p>
         </div>
 
-        {/* DESKTOP VIEW - Layout tetap sama */}
         <div className="hidden lg:block relative">
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] transform -translate-y-1/2 opacity-30"></div>
 
@@ -89,7 +88,6 @@ export default function Timeline() {
           </div>
         </div>
 
-        {/* MOBILE VIEW - Layout tetap sama */}
         <div className="lg:hidden relative">
           <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-[#450099] via-[#9C2163] to-[#FF0020] opacity-30"></div>
 

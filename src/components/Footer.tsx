@@ -27,15 +27,13 @@ export default function Footer() {
     { name: 'FAQ', href: '#faq' },
   ];
 
-  // ✅ Fixed: Hapus spasi di URL WhatsApp
   const whatsappNumber = '6285760621999';
   const whatsappMessage = 'Halo, saya ingin bertanya tentang Tel-U Run 2026. Mohon informasi lebih lanjut.';
   const encodedMessage = encodeURIComponent(whatsappMessage);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-  // ✅ Fixed: Hapus spasi di akhir URL
-  const email = 'nuevalenalswando@gmail.com';
-  const instagramLink = 'https://www.instagram.com/motion_festival/';
+  const email = '*';
+  const instagramLink = '*';
   const youtubeLink = 'https://www.youtube.com/@Telkomuniversity_Surabaya';
 
   return (
@@ -49,7 +47,6 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 py-12 relative z-10">
   
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-          {/* Brand Section */}
           <div className="space-y-5">
             <div className="space-y-2">
               <div className="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-pink-300 to-purple-300">
@@ -67,7 +64,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -90,7 +86,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Event Info */}
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -111,7 +106,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Contact Section */}
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -150,7 +144,6 @@ export default function Footer() {
                 </a>
               </div>
 
-              {/* Social Media */}
               <div className="mt-5">
                 <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                   Media Sosial
@@ -167,7 +160,7 @@ export default function Footer() {
                     <div>
                       <p className="text-purple-100 text-xs">Instagram</p>
                       <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
-                        @motion_festival
+                        @*
                       </p>
                     </div>
                   </a>
@@ -192,7 +185,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-6 border-t border-purple-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
             <p className="text-purple-100 text-sm mb-2">

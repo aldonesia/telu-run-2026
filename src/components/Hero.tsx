@@ -121,7 +121,6 @@ export default function Hero() {
             Satu hari. Satu ruang. Ribuan energi.
           </p>
 
-          {/* Countdown Timer */}
           <div className="mb-12">
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white border border-white/20 mb-6">
               <Calendar className="w-5 h-5" />
@@ -144,9 +143,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            {/* Daftar Sekarang - External Link */}
             <a
               href={registrationLink}
               target="_blank"
@@ -158,7 +155,6 @@ export default function Hero() {
               <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={20} />
             </a>
 
-            {/* Lihat Event - Internal Anchor Link */}
             <a
               href="#events"
               className="px-7 py-3.5 bg-white/10 backdrop-blur-sm text-white font-bold text-base rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20 flex items-center justify-center gap-2 group"

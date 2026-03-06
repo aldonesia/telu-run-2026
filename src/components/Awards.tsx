@@ -83,7 +83,6 @@ export default function Awards() {
     <section id="awards" className="py-12 lg:py-16 bg-gradient-to-b from-white via-purple-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* HEADER - Compact */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#450099]/10 to-[#FF0020]/10 rounded-full mb-3">
             <Crown size={16} className="text-[#FFD700]" />
@@ -101,7 +100,6 @@ export default function Awards() {
           </p>
         </div>
 
-        {/* COMPACT GRID - 3 Cards Horizontal */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {awardCategories.map((cat, idx) => {
             const Icon = cat.icon;
@@ -110,7 +108,6 @@ export default function Awards() {
                 key={idx}
                 className="group relative bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden flex flex-col"
               >
-                {/* Card Header */}
                 <div className={`bg-gradient-to-r ${cat.gradient} p-4`}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -133,7 +130,6 @@ export default function Awards() {
                   </div>
                 </div>
 
-                {/* Card Body - Prize Table */}
                 <div className="p-4 flex-grow">
                   <div className="space-y-3">
                     {cat.categories.map((subCat, subIdx) => (
@@ -172,7 +168,6 @@ export default function Awards() {
                   </div>
                 </div>
 
-                {/* ✅ Card Footer - Dihapus, hanya padding bawah untuk keseimbangan */}
                 <div className="px-4 pb-4"></div>
               </div>
             );
