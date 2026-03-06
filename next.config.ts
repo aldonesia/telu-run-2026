@@ -1,8 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  output: 'standalone',
+  
+  images: {
+    unoptimized: false,
+    domains: ['localhost'],
+  },
+  
+  productionBrowserSourceMaps: false,
 };
 
 export default nextConfig;
