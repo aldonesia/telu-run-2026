@@ -25,6 +25,16 @@ services:
     networks:
       - tel-u-run-network
 
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: tel-u-run-tunnel
+    command: tunnel --no-autoupdate run --token eyJhIjoiMDc5MDNkOWM1MGQyYzcxMTkzZjA0NzIzMmViY2Y4ZDUiLCJ0IjoiMzdiNWM5MGItZDA1MC00YzAyLWE2ZWUtM2ZjOTZiNWM0NjM1IiwicyI6Ik5XRmhOMlV3TTJRdE9XUTVaQzAwWXpKbUxXRXlNVE10TnpreU5EUXdPRGMzT1dFMyJ9
+    restart: unless-stopped
+    depends_on:
+      - tel-u-run
+    networks:
+      - tel-u-run-network
+
 networks:
   tel-u-run-network:
     driver: bridge
