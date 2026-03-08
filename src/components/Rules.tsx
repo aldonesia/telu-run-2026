@@ -98,13 +98,13 @@ export default function Rules() {
       isSchedule: true,
       schedule: [
         {
-          day: 'Jumat, 20 Februari 2026',
-          time: '09:00 - 19:00 WIB',
+          day: 'Jumat, 31 Juli 2026',
+          time: '09:00 - 15:00 WIB',
           location: 'Telkom University Surabaya',
         },
         {
-          day: 'Sabtu, 21 Februari 2026',
-          time: '09:00 - 22:00 WIB',
+          day: 'Sabtu, 01 Agustus 2026',
+          time: '09:00 - 15:00 WIB',
           location: 'Telkom University Surabaya',
         },
       ],
@@ -118,7 +118,6 @@ export default function Rules() {
       rules: [
         'Pendaftaran terbuka untuk WNI dan WNA.',
         'Peserta wajib memiliki identitas resmi (KTP/SIM/PASSPORT).',
-        'Usia minimal 14 tahun pada hari event.',
         'Peserta wajib memilih kategori sesuai ketentuan yang berlaku.',
         'Pendaftaran tidak dapat dialihnamakan setelah konfirmasi.',
         'Pembatalan pendaftaran tidak dapat dilakukan dengan pengembalian dana.',

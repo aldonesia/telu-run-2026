@@ -14,23 +14,20 @@ export default function WhatsAppButton() {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-10 right-10 z-[9999] group"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9999] group"
       aria-label="Chat WhatsApp Tel-U Run 2026"
     >
-      <div className="relative flex items-center">
-        <span 
-          className="absolute -left-40 top-0 bg-gray-800 text-white text-sm rounded-lg py-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl transform -translate-x-4 group-hover:translate-x-0"
-          aria-hidden="true"
-        >
-          Tel-U Run 2026
-        </span>
-        
-        <div className="w-40 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl overflow-hidden">
-          <div className="flex items-center gap-2">
-            <MessageCircle size={20} className="text-white" />
-            <span className="text-white font-bold text-base">WhatsApp</span>
-          </div>
-        </div>
+      {/* Tooltip - hanya muncul di desktop */}
+      <span 
+        className="hidden sm:block absolute -left-32 top-1/2 -translate-y-1/2 bg-gray-800 text-white text-xs rounded-lg py-1.5 px-3 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg"
+        aria-hidden="true"
+      >
+        Hubungi Kami
+      </span>
+      
+      {/* WhatsApp Button - Ukuran lebih kecil */}
+      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+        <MessageCircle size={24} className="sm:size-6 text-white" />
       </div>
     </a>
   );
