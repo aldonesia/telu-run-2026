@@ -6,19 +6,72 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  title: {
+    default: "Tel-U Run 2026 - Satu hari. Satu ruang. Ribuan energi.",
+    template: "%s | Tel-U Run 2026",
+  },
+  description: "Join Tel-U Run 2026 - Official running race event by Telkom University Surabaya. 5K & 10K categories with total prize pool IDR 54 Million. Fun Run, Fun Walk, and exciting community activities.",
+  keywords: [
+    "Tel-U Run 2026",
+    "Telkom University Surabaya",
+    "lomba lari",
+    "running race",
+    "5K race",
+    "10K race",
+    "fun run",
+    "fun walk",
+    "event kampus",
+    "Surabaya",
+    "healthy living",
+    "community event",
+  ],
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  
   icons: {
     icon: [{ url: "/logo.png", sizes: "32x32", type: "image/png" }],
     apple: [{ url: "/logo.png", sizes: "180x180", type: "image/png" }],
   },
-  title: "Tel-U Run 2026 - Satu hari. Satu ruang. Ribuan energi.",
-  description: "Join Tel-U Run 2026- a community event promoting healthy living, togetherness, and celebration. Features Fun Run, Fun Walk, and exciting community activities.",
-  keywords: ["Tel-U Run 2026", "fun run", "fun walk", "community event", "healthy living", "sports event"],
+  
   authors: [{ name: "Tel-U Run 2026 Team" }],
+  
   openGraph: {
-    title: "Tel-U Run 2026 - Satu hari. Satu ruang. Ribuan energi.",
-    description: "Join our community celebration of health, movement, and togetherness",
     type: "website",
+    locale: "id_ID",
+    url: "https://telurun.id",
+    siteName: "Tel-U Run 2026",
+    title: "Tel-U Run 2026 - Satu hari. Satu ruang. Ribuan energi.",
+    description: "Join Tel-U Run 2026 - Official running race event by Telkom University Surabaya. 5K & 10K categories with total prize pool IDR 54 Million.",
+    images: [
+      {
+        url: "https://telurun.id/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Tel-U Run 2026",
+      },
+    ],
   },
+  
+  twitter: {
+    card: "summary_large_image",
+    title: "Tel-U Run 2026",
+    description: "Official running race event by Telkom University Surabaya",
+  },
+  
+  alternates: {
+    canonical: "https://telurun.id",
+  },
+  
 };
 
 export default function RootLayout({
@@ -27,11 +80,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="id"> 
       <body className={inter.className}>
         {children}
-                <WhatsAppButton /> 
-
+        <WhatsAppButton /> 
       </body>
     </html>
   );
