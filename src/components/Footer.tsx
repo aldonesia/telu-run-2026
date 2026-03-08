@@ -94,7 +94,7 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 <li className="text-purple-100">
-                  <span className="font-medium text-white">🏃 Race Day:</span> 2 Agustus 2026
+                  <span className="font-medium text-white">🏃 Race Day:</span> 02 Agustus 2026
                 </li>
                 <li className="text-purple-100">
                   <span className="font-medium text-white">⏰ Start Time:</span> 06.00 WIB
@@ -113,7 +113,7 @@ export default function Footer() {
               </h3>
               
               <div className="space-y-3">
-                <a 
+                {/* <a 
                   href={`mailto:${email}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -126,7 +126,7 @@ export default function Footer() {
                       {email}
                     </p>
                   </div>
-                </a>
+                </a> */}
                 
                 <a 
                   href={whatsappLink}
@@ -150,7 +150,7 @@ export default function Footer() {
                 </h4>
                 
                 <div className="flex flex-col gap-3">
-                  <a 
+                  {/* <a 
                     href={instagramLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -163,7 +163,7 @@ export default function Footer() {
                         @*
                       </p>
                     </div>
-                  </a>
+                  </a> */}
 
                   <a 
                     href={youtubeLink}
@@ -191,7 +191,7 @@ export default function Footer() {
               ©{currentYear} Tel-U Run 2026. All rights reserved.
             </p>
             <p className="text-purple-300 text-xs">
-              Designed with ❤️ by ValenNz • Powered by Telkom University Surabaya
+              Designed with by ValenNz • Powered by Telkom University Surabaya
             </p>
           </div>
         </div>

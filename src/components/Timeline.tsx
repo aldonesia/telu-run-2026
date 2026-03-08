@@ -7,7 +7,7 @@ export default function Timeline() {
     {
       icon: Rocket,
       title: 'Early Bird Registration',
-      date: '09 Maret-01 April 2026',
+      date: '09 Maret - 09 April 2026',
       description: 'Pendaftaran dibuka untuk 5K Race dan 10K Race. Dapatkan harga spesial Early Bird jika mendaftar dalam periode ini!',
       color: '#450099',
     },

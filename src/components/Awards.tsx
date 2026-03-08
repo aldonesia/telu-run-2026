@@ -1,13 +1,13 @@
 'use client';
 
-import { Trophy, Medal, Award, Star, TrendingUp, Users, Crown } from 'lucide-react';
+import { Trophy, TrendingUp, Users, Crown } from 'lucide-react';
 
 export default function Awards() {
   const awardCategories = [
     {
       category: '5K Race',
       icon: TrendingUp,
-      totalPrize: 'IDR 6.000.000',
+      totalPrize: 'IDR 12.000.000',
       gradient: 'from-[#450099] to-[#9C2163]',
       categories: [
         {
@@ -31,7 +31,7 @@ export default function Awards() {
     {
       category: '10K Race',
       icon: Trophy,
-      totalPrize: 'IDR 12.000.000',
+      totalPrize: 'IDR 24.000.000',
       gradient: 'from-[#9C2163] to-[#FF0020]',
       categories: [
         {
@@ -53,14 +53,14 @@ export default function Awards() {
       ],
     },
     {
-      category: 'Master 45+',
+      category: '5K Master 45+',
       icon: Users,
-      totalPrize: 'IDR 12.500.000',
-      gradient: 'from-[#450099] via-[#9C2163] to-[#FF0020]',
+      totalPrize: 'IDR 7.500.000',
+      gradient: 'from-[#450099] to-[#9C2163]',
       note: 'Usia 45+ tahun',
       categories: [
         {
-          name: '5K Master',
+          name: 'Male',
           prizes: [
             { position: '1st', amount: '1.500.000' },
             { position: '2nd', amount: '1.250.000' },
@@ -68,7 +68,32 @@ export default function Awards() {
           ],
         },
         {
-          name: '10K Master',
+          name: 'Female',
+          prizes: [
+            { position: '1st', amount: '1.500.000' },
+            { position: '2nd', amount: '1.250.000' },
+            { position: '3rd', amount: '1.000.000' },
+          ],
+        },
+      ],
+    },
+    {
+      category: '10K Master 45+',
+      icon: Users,
+      totalPrize: 'IDR 10.500.000',
+      gradient: 'from-[#9C2163] to-[#FF0020]',
+      note: 'Usia 45+ tahun',
+      categories: [
+        {
+          name: 'Male',
+          prizes: [
+            { position: '1st', amount: '2.000.000' },
+            { position: '2nd', amount: '1.750.000' },
+            { position: '3rd', amount: '1.500.000' },
+          ],
+        },
+        {
+          name: 'Female',
           prizes: [
             { position: '1st', amount: '2.000.000' },
             { position: '2nd', amount: '1.750.000' },
@@ -79,6 +104,9 @@ export default function Awards() {
     },
   ];
 
+  // Total: 12M (5K) + 24M (10K) + 7.5M (5K Master) + 10.5M (10K Master) = 54M
+  const totalPrizePool = 'IDR 54.000.000';
+
   return (
     <section id="awards" className="py-12 lg:py-16 bg-gradient-to-b from-white via-purple-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,7 +115,7 @@ export default function Awards() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#450099]/10 to-[#FF0020]/10 rounded-full mb-3">
             <Crown size={16} className="text-[#FFD700]" />
             <span className="text-xs font-semibold text-[#450099]">
-              Total Prize Pool: IDR 30.500.000
+              Total Prize Pool: {totalPrizePool}
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">
@@ -100,7 +128,7 @@ export default function Awards() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
           {awardCategories.map((cat, idx) => {
             const Icon = cat.icon;
             return (
