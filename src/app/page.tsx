@@ -13,17 +13,45 @@ import Awards from '@/components/Awards';
 export default function Home() {
   return (
     <main className="min-h-screen"> 
-    <Navbar />
-    <Hero />    
-    <About />
-    <WhatYouWillFind />       
-    <Events />  
-    <Highlights /> 
-    <Awards />               
-    <Timeline />       
-    <Gallery />       
-    <Rules />  
-    <Footer />
+      <Navbar />
+      <Hero />    
+      
+      {/* Tambahkan id yang sesuai dengan sitemap */}
+      <section id="about">
+        <About />
+      </section>
+      
+      <section id="what-you-will-find">
+        <WhatYouWillFind />
+      </section>
+      
+      <section id="events">
+        <Events />
+      </section>
+      
+      <section id="highlights">
+        <Highlights />
+      </section>
+      
+      <section id="awards">
+        <Awards />
+      </section>
+      
+      <section id="timeline">
+        <Timeline />
+      </section>
+      
+      <section id="gallery">
+        <Gallery />
+      </section>
+      
+      <section id="rules">
+        <Rules />
+      </section>
+      
+      <section id="registration">
+        <Footer />
+      </section>
     </main>
   );
 }
