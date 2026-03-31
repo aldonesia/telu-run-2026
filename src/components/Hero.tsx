@@ -2,13 +2,21 @@
 
 import { ArrowRight, Play, Calendar, Clock } from 'lucide-react';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 interface TimeLeft {
   days: number;
   hours: number;
   minutes: number;
   seconds: number;
+}
+
+interface Particle {
+  size: number;
+  top: number;
+  left: number;
+  delay: number;
+  duration: number;
 }
 
 export default function Hero() {
@@ -19,15 +27,32 @@ export default function Hero() {
     minutes: 0,
     seconds: 0,
   });
+  const [particles, setParticles] = useState<Particle[]>([]);
 
-  const eventDate = new Date('2026-08-02T00:00:00').getTime();
+  // ✅ biar tidak recreate tiap render
+  const eventDate = useMemo(
+    () => new Date('2026-08-02T00:00:00').getTime(),
+    []
+  );
+
   const registrationLink = 'https://galanesia.com/events/tel-u-run-2026/';
 
   useEffect(() => {
     setIsMounted(true);
 
+    // ✅ generate sekali saja
+    const generated: Particle[] = [...Array(12)].map(() => ({
+      size: Math.random() * 50 + 20,
+      top: Math.random() * 100,
+      left: Math.random() * 100,
+      delay: Math.random() * 5,
+      duration: Math.random() * 10 + 12,
+    }));
+
+    setParticles(generated);
+
     const calculateTimeLeft = () => {
-      const now = new Date().getTime();
+      const now = Date.now();
       const difference = eventDate - now;
 
       if (difference > 0) {
@@ -37,8 +62,6 @@ export default function Hero() {
           minutes: Math.floor((difference / 1000 / 60) % 60),
           seconds: Math.floor((difference / 1000) % 60),
         });
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
 
@@ -55,15 +78,16 @@ export default function Hero() {
           {String(value).padStart(2, '0')}
         </span>
       </div>
-      <span className="text-xs sm:text-sm text-white/80 font-medium">{label}</span>
+      <span className="text-xs sm:text-sm text-white/80 font-medium">
+        {label}
+      </span>
     </div>
   );
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      
+      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src="/images/hero1.png"
@@ -75,32 +99,26 @@ export default function Hero() {
         />
       </div>
 
+      {/* Gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#450099]/90 via-[#9C2163]/80 to-transparent"></div>
-      
+
+      {/* Particles */}
       {isMounted && (
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(12)].map((_, i) => {
-            const size = Math.random() * 60 + 20;
-            const position = { top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%` };
-            const animation = { 
-              delay: `${Math.random() * 5}s`, 
-              duration: `${Math.random() * 10 + 10}s` 
-            };
-            
-            return (
-              <div
-                key={i}
+          {particles.map((p, i) => (
+            <div
+              key={i}
                 className="absolute bg-white rounded-full opacity-10 animate-float"
-                style={{
-                  width: `${size}px`,
-                  height: `${size}px`,
-                  ...position,
-                  animationDelay: animation.delay,
-                  animationDuration: animation.duration,
-                }}
-              />
-            );
-          })}
+              style={{
+                width: `${p.size}px`,
+                height: `${p.size}px`,
+                top: `${p.top}%`,
+                left: `${p.left}%`,
+                animationDelay: `${p.delay}s`,
+                animationDuration: `${p.duration}s`,
+              }}
+            />
+          ))}
         </div>
       )}
 
