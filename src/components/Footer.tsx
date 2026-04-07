@@ -94,7 +94,7 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 <li className="text-purple-100">
-                  <span className="font-medium text-white">🏃 Race Day:</span> 02 Agustus 2026
+                  <span className="font-medium text-white">🏃 Race Day:</span> 08 November 2026
                 </li>
                 <li className="text-purple-100">
                   <span className="font-medium text-white">⏰ Start Time:</span> 06.00 WIB
@@ -113,20 +113,6 @@ export default function Footer() {
               </h3>
               
               <div className="space-y-3">
-                {/* <a 
-                  href={`mailto:${email}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-3 group"
-                >
-                  <Mail size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
-                  <div>
-                    <p className="text-purple-100 text-xs">Email</p>
-                    <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
-                      {email}
-                    </p>
-                  </div>
-                </a> */}
                 
                 <a 
                   href={whatsappLink}
@@ -150,21 +136,7 @@ export default function Footer() {
                 </h4>
                 
                 <div className="flex flex-col gap-3">
-                  {/* <a 
-                    href={instagramLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-start gap-3 group"
-                  >
-                    <Instagram size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
-                    <div>
-                      <p className="text-purple-100 text-xs">Instagram</p>
-                      <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
-                        @*
-                      </p>
-                    </div>
-                  </a> */}
-
+              
                   <a 
                     href={youtubeLink}
                     target="_blank"

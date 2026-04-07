@@ -29,9 +29,8 @@ export default function Hero() {
   });
   const [particles, setParticles] = useState<Particle[]>([]);
 
-  // ✅ biar tidak recreate tiap render
   const eventDate = useMemo(
-    () => new Date('2026-08-02T00:00:00').getTime(),
+    () => new Date('2026-11-08T00:00:00').getTime(),
     []
   );
 
@@ -40,7 +39,6 @@ export default function Hero() {
   useEffect(() => {
     setIsMounted(true);
 
-    // ✅ generate sekali saja
     const generated: Particle[] = [...Array(12)].map(() => ({
       size: Math.random() * 50 + 20,
       top: Math.random() * 100,
@@ -87,7 +85,6 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       
-      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src="/images/hero1.png"
@@ -99,10 +96,8 @@ export default function Hero() {
         />
       </div>
 
-      {/* Gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#450099]/90 via-[#9C2163]/80 to-transparent"></div>
 
-      {/* Particles */}
       {isMounted && (
         <div className="absolute inset-0 overflow-hidden">
           {particles.map((p, i) => (
@@ -142,7 +137,7 @@ export default function Hero() {
           <div className="mb-12">
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white border border-white/20 mb-6">
               <Calendar className="w-5 h-5" />
-              <span className="text-sm font-medium">2 Agustus 2026</span>
+              <span className="text-sm font-medium">08 November 2026</span>
             </div>
             
             <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4">
