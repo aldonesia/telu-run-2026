@@ -16,7 +16,6 @@ export default function Home() {
       <Navbar />
       <Hero />    
       
-      {/* Tambahkan id yang sesuai dengan sitemap */}
       <section id="about">
         <About />
       </section>

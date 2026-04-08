@@ -43,7 +43,7 @@ export default function About() {
   const youtubeVideoId = '8kQkLf3BuzY';
 
   const eventInfo = {
-    date: '02 Agustus 2026',
+    date: '08 November 2026',
     time: '06.00 WIB',
     location: 'Telkom University Surabaya',
   };

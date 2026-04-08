@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -48,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://telurun.id",
+    url: "https://telurun.id", 
     siteName: "Tel-U Run 2026",
     title: "Tel-U Run 2026 - Satu hari. Satu ruang. Ribuan energi.",
     description: "Join Tel-U Run 2026 - Official running race event by Telkom University Surabaya. 5K & 10K categories with total prize pool IDR 54 Million.",
@@ -71,7 +75,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://telurun.id",
   },
-  
+
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({
@@ -81,7 +90,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id"> 
-      <body className={inter.className}>
+      <body className={`${poppins.variable} ${poppins.className}`}>
         {children}
         <WhatsAppButton /> 
       </body>

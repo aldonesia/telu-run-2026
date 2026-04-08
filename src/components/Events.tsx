@@ -19,7 +19,7 @@ export default function Events() {
       distance: '5 Kilometer',
       price: {
         earlyBird: 'Rp350.000',
-        earlyBirdPeriod: '09 Maret - 09 April 2026',
+        earlyBirdPeriod: '09 Maret - 31 Mei 2026',
       },
       gradient: 'from-[#9C2163] via-[#FF0020] to-[#450099]',
       eventTime: '06:00-12:00',
@@ -41,7 +41,7 @@ export default function Events() {
       distance: '10 Kilometer',
       price: {
         earlyBird: 'Rp450.000',
-        earlyBirdPeriod: '09 Maret - 09 April 2026',
+        earlyBirdPeriod: '09 Maret - 31 Mei 2026',
       },
       gradient: 'from-[#450099] via-[#9C2163] to-[#FF0020]',
       eventTime: '06:00-12:00',

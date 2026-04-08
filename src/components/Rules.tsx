@@ -98,12 +98,12 @@ export default function Rules() {
       isSchedule: true,
       schedule: [
         {
-          day: 'Jumat, 31 Juli 2026',
+          day: 'Jumat, 06 November 2026',
           time: '09:00 - 15:00 WIB',
           location: 'Telkom University Surabaya',
         },
         {
-          day: 'Sabtu, 01 Agustus 2026',
+          day: 'Sabtu, 07 November 2026',
           time: '09:00 - 15:00 WIB',
           location: 'Telkom University Surabaya',
         },

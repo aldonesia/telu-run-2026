@@ -104,7 +104,6 @@ export default function Awards() {
     },
   ];
 
-  // Total: 12M (5K) + 24M (10K) + 7.5M (5K Master) + 10.5M (10K Master) = 54M
   const totalPrizePool = 'IDR 54.000.000';
 
   return (
