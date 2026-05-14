@@ -18,11 +18,13 @@ export default function Events() {
       difficulty: 'Easy',
       distance: '5 Kilometer',
       price: {
+        original: 'Rp450.000',
         earlyBird: 'Rp350.000',
-        earlyBirdPeriod: '09 Maret - 31 Mei 2026',
+        earlyBirdPeriod: '01 Mei - 30 June 2026',
+        discount: 'Hemat 22%',
       },
       gradient: 'from-[#9C2163] via-[#FF0020] to-[#450099]',
-      eventTime: '06:00-12:00',
+      eventTime: '05.00-12:00',
       location: 'Tel-U Surabaya',
       features: [
         { icon: Footprints, label: 'Rute Datar' },
@@ -40,11 +42,13 @@ export default function Events() {
       difficulty: 'Intermediate',
       distance: '10 Kilometer',
       price: {
+        original: 'Rp550.000',
         earlyBird: 'Rp450.000',
-        earlyBirdPeriod: '09 Maret - 31 Mei 2026',
+        earlyBirdPeriod: '01 Mei - 30 June 2026',
+        discount: 'Hemat 18%',
       },
       gradient: 'from-[#450099] via-[#9C2163] to-[#FF0020]',
-      eventTime: '06:00-12:00',
+      eventTime: '05.00-12:00',
       location: 'Tel-U Surabaya',
       features: [
         { icon: Mountain, label: 'Rute Menantang' },
@@ -156,25 +160,38 @@ export default function Events() {
                     </span>
                   </div>
 
+                  {/* 💰 Harga dengan Coretan */}
                   <div className="mb-6 p-4 bg-gradient-to-r from-[#450099]/5 to-[#FF0020]/5 rounded-xl border border-[#450099]/10 flex-shrink-0">
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2">
                         <Calendar className="text-[#450099]" size={16} />
-                        <span className="text-xs font-medium text-gray-600">Early Bird</span>
+                        <span className="text-xs font-medium text-gray-600">Early Bird Price</span>
                       </div>
-                      <span className="text-xs px-2 py-1 bg-[#FF0020]/10 text-[#FF0020] font-semibold rounded-full">
+                      {race.price.discount && (
+                        <span className="text-xs px-2.5 py-1 bg-[#FF0020]/10 text-[#FF0020] font-bold rounded-full border border-[#FF0020]/20">
+                          🔥 {race.price.discount}
+                        </span>
+                      )}
+                    </div>
+                    
+                    {/* Harga: Original dicoret + Early Bird */}
+                    <div className="flex items-baseline gap-3 mb-1">
+                      <span className="text-3xl font-bold text-[#FF0020]">
+                        {race.price.earlyBird}
+                      </span>
+                      <span className="text-lg text-gray-400 line-through font-medium">
+                        {race.price.original}
+                      </span>
+                    </div>
+                    
+                    <div className="flex items-center justify-between mt-2">
+                      <span className="text-xs text-gray-500">
+                        * Sudah termasuk Race Pack & benefit
+                      </span>
+                      <span className="text-[10px] px-2 py-0.5 bg-gray-100 text-gray-500 rounded">
                         {race.price.earlyBirdPeriod}
                       </span>
                     </div>
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-2xl font-bold text-[#FF0020]">
-                        {race.price.earlyBird}
-                      </span>
-                      <span className="text-xs text-gray-500">IDR</span>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-2">
-                      * Sudah termasuk Race Pack & benefit lengkap
-                    </p>
                   </div>
 
                   <div className="flex items-center gap-4 text-sm text-gray-600 mb-6 pb-4 border-b border-gray-100 flex-shrink-0">

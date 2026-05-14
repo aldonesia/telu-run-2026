@@ -97,7 +97,7 @@ export default function Footer() {
                   <span className="font-medium text-white">🏃 Race Day:</span> 08 November 2026
                 </li>
                 <li className="text-purple-100">
-                  <span className="font-medium text-white">⏰ Start Time:</span> 06.00 WIB
+                  <span className="font-medium text-white">⏰ Start Time:</span> 05.00 WIB
                 </li>
                 <li className="text-purple-100">
                   <span className="font-medium text-white">📍 Location:</span> Tel-U Surabaya

@@ -54,7 +54,7 @@ export default function Rules() {
         'Pihak penyelenggara berhak menutup pendaftaran sebelum tenggang waktu jika kuota sudah penuh.',
         'Apabila event dibatalkan karena force majeure, tidak ada pengembalian biaya pendaftaran.',
         'Pihak penyelenggara berhak menghentikan acara atau mengubah rute sewaktu-waktu.',
-        'Cut Off Time 2 jam untuk kategori 5K (Start 06:00, COT 08:00).',
+        'Cut Off Time 2 jam untuk kategori 5K (Start 05.00, COT 08:00).',
         'Peserta bertanggung jawab atas kesiapan fisik dan kesehatan sendiri.',
       ],
     },
