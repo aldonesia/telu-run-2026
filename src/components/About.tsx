@@ -44,7 +44,7 @@ export default function About() {
 
   const eventInfo = {
     date: '08 November 2026',
-    time: '06.00 WIB',
+    time: '05.00 WIB',
     location: 'Telkom University Surabaya',
   };
 
