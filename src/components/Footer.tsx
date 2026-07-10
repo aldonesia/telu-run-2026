@@ -90,14 +90,10 @@ export default function Footer() {
                   <CalendarDays size={14} className="text-purple-300 flex-shrink-0" />
                   <span><span className="font-medium text-white">Race Day:</span> 08 November 2026</span>
                 </li>
-<<<<<<< HEAD
+                {/* ✅ HEAD: Konsisten dengan struktur item lainnya (pakai icon Clock) */}
                 <li className="text-purple-100 flex items-center gap-2">
                   <Clock size={14} className="text-purple-300 flex-shrink-0" />
                   <span><span className="font-medium text-white">Start Time:</span> 05.00 WIB</span>
-=======
-                <li className="text-purple-100">
-                  <span className="font-medium text-white">⏰ Start Time:</span> 05.00 WIB
->>>>>>> c04f32c3c9a2f36b3f08ac1cea334dff7e20b681
                 </li>
                 <li className="text-purple-100 flex items-center gap-2">
                   <MapPin size={14} className="text-purple-300 flex-shrink-0" />

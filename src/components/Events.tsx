@@ -49,11 +49,7 @@ export default function Events() {
         discount: 'Hemat 22%',
       },
       gradient: 'from-[#9C2163] via-[#FF0020] to-[#450099]',
-<<<<<<< HEAD
       eventTime: '05.00-10:00',
-=======
-      eventTime: '05.00-12:00',
->>>>>>> c04f32c3c9a2f36b3f08ac1cea334dff7e20b681
       location: 'Tel-U Surabaya',
       features: [
         { icon: Footprints, label: 'Rute Datar' },
@@ -77,11 +73,7 @@ export default function Events() {
         discount: 'Hemat 18%',
       },
       gradient: 'from-[#450099] via-[#9C2163] to-[#FF0020]',
-<<<<<<< HEAD
-      eventTime: '05.00-10:00',
-=======
-      eventTime: '05.00-12:00',
->>>>>>> c04f32c3c9a2f36b3f08ac1cea334dff7e20b681
+      eventTime: '05.00-12:00', // ✅ Incoming (lebih realistis untuk race 10K + cut-off 3 jam)
       location: 'Tel-U Surabaya',
       features: [
         { icon: Mountain, label: 'Rute Menantang' },
@@ -213,38 +205,26 @@ export default function Events() {
                     </span>
                   </div>
 
-<<<<<<< HEAD
+                  {/* ✅ HEAD: Box harga dengan state grayscale saat closed */}
                   <div className={`mb-6 p-4 bg-gradient-to-r from-[#450099]/5 to-[#FF0020]/5 rounded-xl border border-[#450099]/10 flex-shrink-0 ${
                     isRegistrationClosed ? 'opacity-60 grayscale' : ''
                   }`}>
-=======
-                  {/* 💰 Harga dengan Coretan */}
-                  <div className="mb-6 p-4 bg-gradient-to-r from-[#450099]/5 to-[#FF0020]/5 rounded-xl border border-[#450099]/10 flex-shrink-0">
->>>>>>> c04f32c3c9a2f36b3f08ac1cea334dff7e20b681
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2">
                         <Calendar className="text-[#450099]" size={16} />
                         <span className="text-xs font-medium text-gray-600">Early Bird Price</span>
                       </div>
-<<<<<<< HEAD
+                      {/* ✅ HEAD: Badge diskon hanya muncul saat registration open */}
                       {race.price.discount && !isRegistrationClosed && (
-=======
-                      {race.price.discount && (
->>>>>>> c04f32c3c9a2f36b3f08ac1cea334dff7e20b681
                         <span className="text-xs px-2.5 py-1 bg-[#FF0020]/10 text-[#FF0020] font-bold rounded-full border border-[#FF0020]/20">
                           🔥 {race.price.discount}
                         </span>
                       )}
                     </div>
                     
-<<<<<<< HEAD
+                    {/* ✅ HEAD: Harga berubah abu-abu saat closed */}
                     <div className="flex items-baseline gap-3 mb-1">
                       <span className={`text-3xl font-bold ${isRegistrationClosed ? 'text-gray-400' : 'text-[#FF0020]'}`}>
-=======
-                    {/* Harga: Original dicoret + Early Bird */}
-                    <div className="flex items-baseline gap-3 mb-1">
-                      <span className="text-3xl font-bold text-[#FF0020]">
->>>>>>> c04f32c3c9a2f36b3f08ac1cea334dff7e20b681
                         {race.price.earlyBird}
                       </span>
                       <span className="text-lg text-gray-400 line-through font-medium">
