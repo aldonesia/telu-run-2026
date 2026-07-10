@@ -7,7 +7,7 @@ export default function Timeline() {
     {
       icon: Rocket,
       title: 'Early Bird Registration',
-      date: '09 Maret - 31 Mei 2026',
+      date: '01 Mei - 30 June 2026',
       description: 'Pendaftaran dibuka untuk 5K Race dan 10K Race. Dapatkan harga spesial Early Bird jika mendaftar dalam periode ini!',
       color: '#450099',
     },
@@ -21,8 +21,8 @@ export default function Timeline() {
     {
       icon: CheckCircle,
       title: 'Race Day',
-      date: '08 November 2026 | 06.00 WIB',
-      description: 'Hari H Tel-U Run 2026! Start pukul 06.00 WIB. 5K Race dan 10K Race dengan rute profesional. Sertakan semangat dan energi positif Anda!',
+      date: '08 November 2026 | 05.00 WIB',
+      description: 'Hari H Tel-U Run 2026! Start pukul 05.00 WIB. 5K Race dan 10K Race dengan rute profesional. Sertakan semangat dan energi positif Anda!',
       color: '#FF0020',
     },
     {

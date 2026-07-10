@@ -29,13 +29,30 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+  // ✅ Fungsi navigasi terpusat
+  const handleNavigation = (href: string) => {
+    console.log('Navigating to:', href); // 🔍 Debug log
+    setIsMobileMenuOpen(false);
+
+    if (href === '#home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.warn('Element not found:', href); // 🔍 Debug warning
+      }
     }
+  };
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    handleNavigation(href);
+  };
+
+  const handleButtonClick = (href: string) => {
+    handleNavigation(href);
   };
 
   const navbarBgClass = isScrolled 
@@ -53,7 +70,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`w-11/12 mx-auto py-3 px-6 md:px-8 rounded-full flex justify-between items-center fixed left-1/2 -translate-x-1/2 top-8 z-[999] transition-all duration-300 ${navbarBgClass}`}>
+      {/* ✅ Navbar: z-[9999] + pointer-events-auto */}
+      <nav 
+        className={`w-11/12 mx-auto py-3 px-6 md:px-8 rounded-full flex justify-between items-center fixed left-1/2 -translate-x-1/2 top-8 z-[9999] transition-all duration-300 pointer-events-auto ${navbarBgClass}`}
+      >
+        {/* Logo */}
         <a
           href="#home"
           onClick={(e) => handleClick(e, '#home')}
@@ -98,7 +119,10 @@ export default function Navbar() {
               ? 'bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] text-white shadow-lg hover:shadow-2xl'
               : 'bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20'
           }`}
-          onClick={() => window.location.href = '#events'}
+          onClick={() => {
+            console.log('Get Started clicked!'); // 🔍 Debug log
+            handleButtonClick('#events');
+          }}
         >
           Get Started
         </button>
@@ -136,6 +160,8 @@ export default function Navbar() {
             </a>
           ))}
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-4"></div>
+          
+          {/* ✅ Get Started Button (Mobile) */}
           <button
             className={`w-full mt-2 font-poppins font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg ${
               isScrolled
@@ -143,8 +169,8 @@ export default function Navbar() {
                 : 'bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] text-white hover:opacity-90 hover:shadow-2xl' 
             }`}
             onClick={() => {
-              window.location.href = '#contact';
-              setIsMobileMenuOpen(false);
+              console.log('Mobile Get Started clicked!'); // 🔍 Debug log
+              handleButtonClick('#events');
             }}
           >
             Get Started
