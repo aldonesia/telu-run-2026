@@ -74,7 +74,6 @@ export default function Navbar() {
       <nav 
         className={`w-11/12 mx-auto py-3 px-6 md:px-8 rounded-full flex justify-between items-center fixed left-1/2 -translate-x-1/2 top-8 z-[9999] transition-all duration-300 pointer-events-auto ${navbarBgClass}`}
       >
-        {/* Logo */}
         <a
           href="#home"
           onClick={(e) => handleAnchorClick(e, '#home')}
@@ -95,7 +94,6 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => (
             <a
@@ -114,7 +112,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Desktop Get Started Button */}
         <button
           className={`hidden md:block px-8 py-3 font-poppins font-bold text-base rounded-full transition-all duration-300 hover:scale-105 hover:brightness-110 ${
             isScrolled
@@ -129,7 +126,6 @@ export default function Navbar() {
           Get Started
         </button>
 
-        {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={`md:hidden p-3 rounded-full transition-all duration-300 ${
@@ -144,7 +140,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className={`w-11/12 mx-auto fixed left-1/2 -translate-x-1/2 top-28 z-[998] rounded-2xl shadow-2xl border py-6 px-5 md:hidden transition-all duration-300 ${
           isScrolled 
@@ -166,7 +161,6 @@ export default function Navbar() {
             </a>
           ))}
           
-          {/* Get Started Button (Mobile) */}
           <button
             className="w-full mt-4 font-poppins font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] text-white hover:opacity-90 hover:shadow-2xl"
             onClick={() => {

@@ -205,7 +205,6 @@ export default function Events() {
                     </span>
                   </div>
 
-                  {/* ✅ HEAD: Box harga dengan state grayscale saat closed */}
                   <div className={`mb-6 p-4 bg-gradient-to-r from-[#450099]/5 to-[#FF0020]/5 rounded-xl border border-[#450099]/10 flex-shrink-0 ${
                     isRegistrationClosed ? 'opacity-60 grayscale' : ''
                   }`}>
@@ -214,7 +213,6 @@ export default function Events() {
                         <Calendar className="text-[#450099]" size={16} />
                         <span className="text-xs font-medium text-gray-600">Early Bird Price</span>
                       </div>
-                      {/* ✅ HEAD: Badge diskon hanya muncul saat registration open */}
                       {race.price.discount && !isRegistrationClosed && (
                         <span className="text-xs px-2.5 py-1 bg-[#FF0020]/10 text-[#FF0020] font-bold rounded-full border border-[#FF0020]/20">
                           🔥 {race.price.discount}
@@ -222,7 +220,6 @@ export default function Events() {
                       )}
                     </div>
                     
-                    {/* ✅ HEAD: Harga berubah abu-abu saat closed */}
                     <div className="flex items-baseline gap-3 mb-1">
                       <span className={`text-3xl font-bold ${isRegistrationClosed ? 'text-gray-400' : 'text-[#FF0020]'}`}>
                         {race.price.earlyBird}
