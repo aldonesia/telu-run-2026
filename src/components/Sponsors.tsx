@@ -5,12 +5,7 @@ import Image from 'next/image';
 
 export default function Sponsors() {
   const sponsors = [
-    { id: 1, name: 'Telkom University', image: '/images/sponsors/bsi.jpg' },
-    { id: 2, name: 'Bank Mandiri', image: '/images/sponsors/cheers.jpg' },
-    { id: 3, name: 'Indomaret', image: '/images/sponsors/deorex.jpg' },
-    { id: 4, name: 'Grab Indonesia', image: '/images/sponsors/fithub.png' },
-    { id: 5, name: 'Gojek', image: '/images/sponsors/kahf.png' },
-    { id: 6, name: 'Tokopedia', image: '/images/sponsors/ifi.png' },
+    { id: 1, name: 'Cheers', image: '/images/sponsors/cheers.png' },
   ];
 
   const partners = [
@@ -60,14 +55,14 @@ export default function Sponsors() {
         </div>
 
         <div className="mb-12">
-          <h3 className="text-xl font-bold text-center mb-6 text-gray-900">Main Sponsors</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <h3 className="text-xl font-bold text-center mb-6 text-gray-900">Main Sponsor</h3>
+          <div className="grid grid-cols-1 max-w-sm mx-auto gap-4">
             {sponsors.map((sponsor) => (
               <div
                 key={sponsor.id}
-                className="group relative bg-white rounded-xl p-4 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 flex items-center justify-center"
+                className="group relative bg-white rounded-xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 flex items-center justify-center"
               >
-                <div className="relative h-16 w-full">
+                <div className="relative h-20 w-full">
                   <Image
                     src={sponsor.image}
                     alt={sponsor.name}
