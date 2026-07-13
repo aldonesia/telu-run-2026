@@ -50,7 +50,6 @@ export default function Gallery() {
     [selectedImage]
   );
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedImage === null) return;

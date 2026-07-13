@@ -29,7 +29,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // ✅ Fungsi navigasi terpusat
   const handleNavigation = (href: string) => {
     console.log('Navigating to:', href);
     setIsMobileMenuOpen(false);
@@ -46,13 +45,11 @@ export default function Navbar() {
     }
   };
 
-  // ✅ Untuk anchor tag (mencegah default behavior)
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     handleNavigation(href);
   };
 
-  // ✅ Untuk button (tidak perlu preventDefault)
   const handleButtonClick = (href: string) => {
     handleNavigation(href);
   };

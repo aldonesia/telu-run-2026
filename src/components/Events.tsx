@@ -1,37 +1,13 @@
 'use client';
 
-import { Activity, Users, Clock, MapPin, Star, Tag, Calendar, ArrowRight, Footprints, Mountain, Heart, Lock } from 'lucide-react';
+import { Activity, Users, Clock, MapPin, Star, Tag, Calendar, ArrowRight, Footprints, Mountain, Lock } from 'lucide-react';
 import Image from 'next/image'; 
 
 export default function Events() {
   const registrationLink = 'https://galanesia.com/events/tel-u-run-2026/';
-  const isRegistrationClosed = true; // Status pendaftaran
+  const isRegistrationClosed = false;
   
   const races = [
-    {
-      icon: Heart,
-      title: '2.5K Post-Stroke Walk',
-      shortDesc: 'Kategori inklusif & recovery',
-      description:
-        'Kategori walking 2.5 kilometer yang dirancang khusus untuk penyintas stroke dan pemulihan, dengan dukungan teknologi Picobot dan rute yang aman.',
-      badge: 'Inclusive',
-      badgeColor: 'bg-[#450099]',
-      difficulty: 'Easy',
-      distance: '2.5 Kilometer',
-      price: {
-        original: 'Rp0',
-        earlyBird: 'Rp0',
-        earlyBirdPeriod: '01 Mei - 30 June 2026',
-        discount: 'Hemat 20%',
-      },
-      gradient: 'from-[#450099] via-[#6B4EE6] to-[#9C2163]',
-      eventTime: '06.00-10:00',
-      location: 'Tel-U Surabaya',
-      features: [
-        { icon: Footprints, label: 'Rute Aman' },
-        { icon: Clock, label: 'Cut-off 1.5 Jam' },
-      ],
-    },
     {
       icon: Users,
       title: '5K Race',
@@ -43,10 +19,7 @@ export default function Events() {
       difficulty: 'Easy',
       distance: '5 Kilometer',
       price: {
-        original: 'Rp450.000',
-        earlyBird: 'Rp350.000',
-        earlyBirdPeriod: '01 Mei - 30 June 2026',
-        discount: 'Hemat 22%',
+        normal: 'Rp300.000',
       },
       gradient: 'from-[#9C2163] via-[#FF0020] to-[#450099]',
       eventTime: '05.00-10:00',
@@ -67,13 +40,10 @@ export default function Events() {
       difficulty: 'Intermediate',
       distance: '10 Kilometer',
       price: {
-        original: 'Rp550.000',
-        earlyBird: 'Rp450.000',
-        earlyBirdPeriod: '01 Mei - 30 June 2026',
-        discount: 'Hemat 18%',
+        normal: 'Rp400.000',
       },
       gradient: 'from-[#450099] via-[#9C2163] to-[#FF0020]',
-      eventTime: '05.00-12:00', // ✅ Incoming (lebih realistis untuk race 10K + cut-off 3 jam)
+      eventTime: '05.00-10:00',
       location: 'Tel-U Surabaya',
       features: [
         { icon: Mountain, label: 'Rute Menantang' },
@@ -86,7 +56,6 @@ export default function Events() {
     const map: Record<string, string> = {
       '10K Race': '/images/events/run10k.jpg',
       '5K Race': '/images/events/run5k.jpg',
-      '2.5K Post-Stroke Walk': '/images/events/run2.5k.jpg',
     };
     return map[title] || '/images/events/run5k.jpg';
   };
@@ -110,7 +79,7 @@ export default function Events() {
           </h2>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            Tel-U Run 2026 menghadirkan tiga kategori race termasuk kategori inklusif 2.5K untuk recovery. Pilih jarak yang sesuai dengan kemampuan dan target pribadi Anda!
+            Tel-U Run 2026 menghadirkan dua kategori race. Pilih jarak yang sesuai dengan kemampuan dan target pribadi Anda!
           </p>
 
           {isRegistrationClosed && (
@@ -121,7 +90,7 @@ export default function Events() {
           )}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {races.map((race, index) => {
             const imagePath = getImagePath(race.title);
 
@@ -210,31 +179,20 @@ export default function Events() {
                   }`}>
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2">
-                        <Calendar className="text-[#450099]" size={16} />
-                        <span className="text-xs font-medium text-gray-600">Early Bird Price</span>
+                        <Tag className="text-[#450099]" size={16} />
+                        <span className="text-xs font-medium text-gray-600">Normal Price</span>
                       </div>
-                      {race.price.discount && !isRegistrationClosed && (
-                        <span className="text-xs px-2.5 py-1 bg-[#FF0020]/10 text-[#FF0020] font-bold rounded-full border border-[#FF0020]/20">
-                          🔥 {race.price.discount}
-                        </span>
-                      )}
                     </div>
                     
                     <div className="flex items-baseline gap-3 mb-1">
                       <span className={`text-3xl font-bold ${isRegistrationClosed ? 'text-gray-400' : 'text-[#FF0020]'}`}>
-                        {race.price.earlyBird}
-                      </span>
-                      <span className="text-lg text-gray-400 line-through font-medium">
-                        {race.price.original}
+                        {race.price.normal}
                       </span>
                     </div>
                     
                     <div className="flex items-center justify-between mt-2">
                       <span className="text-xs text-gray-500">
                         * Sudah termasuk Race Pack & benefit
-                      </span>
-                      <span className="text-[10px] px-2 py-0.5 bg-gray-100 text-gray-500 rounded">
-                        {race.price.earlyBirdPeriod}
                       </span>
                     </div>
                   </div>
