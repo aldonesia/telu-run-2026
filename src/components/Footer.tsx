@@ -5,6 +5,7 @@ import {
   Clock, 
   Phone, 
   Youtube,
+  Instagram,
   Navigation,
   CalendarDays,
   ChevronRight,
@@ -28,6 +29,7 @@ export default function Footer() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
   const youtubeLink = 'https://www.youtube.com/@Telkomuniversity_Surabaya';
+  const instagramLink = 'https://www.instagram.com/tel.u.run/';
 
   return (
     <footer className="bg-gradient-to-r from-purple-900 via-pink-900 to-purple-900 text-white border-t border-purple-800 overflow-hidden relative">
@@ -133,6 +135,21 @@ export default function Footer() {
                 </h4>
                 
                 <div className="flex flex-col gap-3">
+                  <a 
+                    href={instagramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 group"
+                  >
+                    <Instagram size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors flex-shrink-0" />
+                    <div>
+                      <p className="text-purple-100 text-xs">Instagram</p>
+                      <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
+                        @tel.u.run
+                      </p>
+                    </div>
+                  </a>
+                  
                   <a 
                     href={youtubeLink}
                     target="_blank"
