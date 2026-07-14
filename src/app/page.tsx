@@ -9,7 +9,6 @@ import Footer from '@/components/Footer';
 import Highlights from '@/components/Highlights';
 import WhatYouWillFind from '@/components/WhatYouWillFind';
 import Awards from '@/components/Awards';
-import Sponsors from '@/components/Sponsors';
 
 export default function Home() {
   return (
@@ -47,10 +46,6 @@ export default function Home() {
       
       <section id="rules">
         <Rules />
-      </section>
-
-      <section id="sponsors">
-        <Sponsors />
       </section>
       
       <section id="registration">

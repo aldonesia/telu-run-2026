@@ -40,7 +40,7 @@ export default function About() {
     },
   ];
 
-  const youtubeVideoId = 'akldM6sTJ7M';
+  const youtubeVideoId = '8kQkLf3BuzY';
 
   const eventInfo = {
     date: '08 November 2026',

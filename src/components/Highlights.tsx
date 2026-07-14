@@ -7,7 +7,7 @@ import {
   FileText, 
   Droplet, 
   Star, 
-  Shield, 
+  Clock, 
   ShieldCheck,
   Package,
 } from 'lucide-react';
@@ -29,9 +29,9 @@ export default function Highlights() {
       color: '#9C2163',
     },
     {
-      icon: Shield,
-      title: 'Asuransi',
-      description: 'Asuransi kecelakaan untuk menjamin keamanan dan perlindungan peserta selama race',
+      icon: Clock,
+      title: 'Timing Chip',
+      description: 'Sistem timing profesional untuk mencatat waktu race resmi Anda',
       gradient: 'from-[#450099] to-[#FF0020]',
       color: '#450099',
     },
@@ -96,7 +96,7 @@ export default function Highlights() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {highlights.map((item, index) => {
             const Icon = item.icon;
             return (

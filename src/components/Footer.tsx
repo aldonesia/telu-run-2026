@@ -3,14 +3,18 @@
 import { 
   MapPin, 
   Clock, 
+  Mail, 
   Phone, 
+  Instagram, 
   Youtube,
-  Instagram,
-  Navigation,
-  CalendarDays,
+  MessageSquare,
+  ArrowRight,
+  Star,
+  Award,
+  Users,
+  Trophy,
   ChevronRight,
-  Headphones,
-  Share2
+  ChevronLeft
 } from 'lucide-react';
 
 export default function Footer() {
@@ -28,20 +32,21 @@ export default function Footer() {
   const encodedMessage = encodeURIComponent(whatsappMessage);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
+  const email = '*';
+  const instagramLink = '*';
   const youtubeLink = 'https://www.youtube.com/@Telkomuniversity_Surabaya';
-  const instagramLink = 'https://www.instagram.com/tel.u.run/';
 
   return (
-    <footer className="bg-gradient-to-r from-purple-900 via-pink-900 to-purple-900 text-white border-t border-purple-800 overflow-hidden relative">
+    <footer className="bg-linear-to-r from-purple-900 via-pink-900 to-purple-900 text-white border-t border-purple-800 overflow-hidden relative">
       <div className="absolute inset-0 opacity-15">
         <div className="w-48 h-48 rounded-full bg-pink-600 absolute -top-24 -left-24 animate-bounce-slow"></div>
         <div className="w-40 h-40 rounded-full bg-purple-600 absolute -bottom-20 -right-20 animate-bounce-slow delay-1000"></div>
         <div className="w-32 h-32 rounded-full bg-purple-500 absolute top-1/2 left-1/4 animate-pulse-slow"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-12 relative z-10">
   
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           <div className="space-y-5">
             <div className="space-y-2">
               <div className="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-pink-300 to-purple-300">
@@ -54,7 +59,7 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-3 text-sm">
-              <MapPin size={16} className="text-purple-300 flex-shrink-0" />
+              <MapPin size={16} className="text-purple-300" />
               <span className="text-purple-100">Telkom University Surabaya</span>
             </div>
           </div>
@@ -62,7 +67,7 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <Navigation size={18} className="text-purple-300" />
+                <MessageSquare size={18} className="text-purple-300" />
                 Navigasi
               </h3>
               <ul className="space-y-2.5">
@@ -84,21 +89,18 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <CalendarDays size={18} className="text-purple-300" />
+                <Clock size={18} className="text-purple-300" />
                 Info Event
               </h3>
               <ul className="space-y-3">
-                <li className="text-purple-100 flex items-center gap-2">
-                  <CalendarDays size={14} className="text-purple-300 flex-shrink-0" />
-                  <span><span className="font-medium text-white">Race Day:</span> 08 November 2026</span>
+                <li className="text-purple-100">
+                  <span className="font-medium text-white">🏃 Race Day:</span> 08 November 2026
                 </li>
-                <li className="text-purple-100 flex items-center gap-2">
-                  <Clock size={14} className="text-purple-300 flex-shrink-0" />
-                  <span><span className="font-medium text-white">Start Time:</span> 05.00 WIB</span>
+                <li className="text-purple-100">
+                  <span className="font-medium text-white">⏰ Start Time:</span> 05.00 WIB
                 </li>
-                <li className="text-purple-100 flex items-center gap-2">
-                  <MapPin size={14} className="text-purple-300 flex-shrink-0" />
-                  <span><span className="font-medium text-white">Location:</span> Tel-U Surabaya</span>
+                <li className="text-purple-100">
+                  <span className="font-medium text-white">📍 Location:</span> Tel-U Surabaya
                 </li>
               </ul>
             </div>
@@ -107,18 +109,18 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <Headphones size={18} className="text-purple-300" />
                 Hubungi Kami
               </h3>
               
               <div className="space-y-3">
+                
                 <a 
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 group"
                 >
-                  <Phone size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors flex-shrink-0" />
+                  <Phone size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
                   <div>
                     <p className="text-purple-100 text-xs">WhatsApp</p>
                     <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
@@ -130,33 +132,18 @@ export default function Footer() {
 
               <div className="mt-5">
                 <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                  <Share2 size={18} className="text-purple-300" />
                   Media Sosial
                 </h4>
                 
                 <div className="flex flex-col gap-3">
-                  <a 
-                    href={instagramLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-start gap-3 group"
-                  >
-                    <Instagram size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors flex-shrink-0" />
-                    <div>
-                      <p className="text-purple-100 text-xs">Instagram</p>
-                      <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">
-                        @tel.u.run
-                      </p>
-                    </div>
-                  </a>
-                  
+              
                   <a 
                     href={youtubeLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-start gap-3 group"
                   >
-                    <Youtube size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors flex-shrink-0" />
+                    <Youtube size={18} className="text-purple-300 mt-1 group-hover:text-white transition-colors" />
                     <div>
                       <p className="text-purple-100 text-xs">YouTube</p>
                       <p className="text-white group-hover:text-pink-300 transition-colors text-sm font-medium">

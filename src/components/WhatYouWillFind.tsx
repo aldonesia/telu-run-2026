@@ -2,7 +2,7 @@
 
 import { 
   Trophy, 
-  Shield,
+  Clock, 
   Package, 
   Medal, 
   Route, 
@@ -27,16 +27,16 @@ export default function WhatYouWillFind() {
       badge: 'Competitive',
     },
     {
-      icon: Shield,
-      title: 'Asuransi',
-      description: 'Asuransi kecelakaan untuk menjamin keamanan dan perlindungan peserta selama race berlangsung.',
+      icon: Clock,
+      title: 'Professional Timing',
+      description: 'Sistem chip timing akurat untuk mencatat hasil race resmi dan personal best Anda.',
       gradient: 'from-[#450099] to-[#FF0020]',
-      badge: 'Protection',
+      badge: 'Official',
     },
     {
       icon: Package,
       title: 'Complete Race Pack',
-      description: 'Dapatkan BIB Number, race kit, jersey, dan merchandise eksklusif peserta.',
+      description: 'Dapatkan BIB Number, timing chip, race kit, dan merchandise eksklusif peserta.',
       gradient: 'from-[#FF0020] to-[#9C2163]',
       badge: 'Included',
     },

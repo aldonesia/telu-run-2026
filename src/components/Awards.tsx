@@ -107,27 +107,27 @@ export default function Awards() {
   const totalPrizePool = 'IDR 54.000.000';
 
   return (
-    <section id="awards" className="py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="awards" className="py-12 lg:py-16 bg-gradient-to-b from-white via-purple-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#450099]/10 to-[#FF0020]/10 rounded-full mb-4 mx-auto">
-            <Crown size={18} className="text-[#FFD700]" />
-            <span className="text-sm font-semibold text-[#450099]">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#450099]/10 to-[#FF0020]/10 rounded-full mb-3">
+            <Crown size={16} className="text-[#FFD700]" />
+            <span className="text-xs font-semibold text-[#450099]">
               Total Prize Pool: {totalPrizePool}
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020]">
               Awards & Prizes
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
             Raih kemenangan dan bawa pulang hadiah menarik!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
           {awardCategories.map((cat, idx) => {
             const Icon = cat.icon;
             return (
