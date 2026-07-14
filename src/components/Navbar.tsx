@@ -28,9 +28,8 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // ✅ Fungsi navigasi terpusat
   const handleNavigation = (href: string) => {
-    console.log('Navigating to:', href); // 🔍 Debug log
+    console.log('Navigating to:', href);
     setIsMobileMenuOpen(false);
 
     if (href === '#home') {
@@ -40,7 +39,7 @@ export default function Navbar() {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       } else {
-        console.warn('Element not found:', href); // 🔍 Debug warning
+        console.warn('Element not found:', href);
       }
     }
   };
@@ -68,15 +67,13 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ✅ Navbar: z-[9999] + pointer-events-auto */}
       <nav 
         className={`w-11/12 mx-auto py-3 px-6 md:px-8 rounded-full flex justify-between items-center fixed left-1/2 -translate-x-1/2 top-8 z-[9999] transition-all duration-300 pointer-events-auto ${navbarBgClass}`}
       >
-        {/* Logo */}
         <a
           href="#home"
           onClick={(e) => handleAnchorClick(e, '#home')}
-          className="flex items-center space-x-3 group pointer-events-auto cursor-pointer"
+          className="flex items-center space-x-3 group"
         >
           <div className="relative w-12 h-12 overflow-hidden group-hover:scale-110 transition-transform duration-300">
             <Image
@@ -99,7 +96,7 @@ export default function Navbar() {
               key={item.name}
               href={item.href}
               onClick={(e) => handleAnchorClick(e, item.href)}
-              className={`group relative font-poppins font-semibold text-base md:text-lg ${textColorClass} ${navHoverClass} transition-all duration-300 cursor-pointer`}
+              className={`group relative font-poppins font-semibold text-base md:text-lg ${textColorClass} ${navHoverClass} transition-all duration-300`}
             >
               {item.name}
               <span className={`absolute -bottom-1 left-0 w-0 h-1 rounded-full transition-all duration-300 group-hover:w-full ${
@@ -120,7 +117,7 @@ export default function Navbar() {
               : 'bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20'
           }`}
           onClick={() => {
-            console.log('Get Started clicked!'); // 🔍 Debug log
+            console.log('Get Started clicked!');
             handleButtonClick('#events');
           }}
         >
@@ -136,6 +133,8 @@ export default function Navbar() {
               ? 'text-gray-800 hover:bg-gradient-to-r hover:from-[#450099] hover:via-[#9C2163] hover:to-[#FF0020] hover:text-white'
               : 'text-white hover:bg-white/20'
           }`}
+          aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -153,7 +152,7 @@ export default function Navbar() {
               key={item.name}
               href={item.href}
               onClick={(e) => handleAnchorClick(e, item.href)}
-              className={`block px-6 py-4 font-poppins font-semibold text-lg transition-all duration-300 rounded-xl cursor-pointer ${
+              className={`block px-6 py-4 font-poppins font-semibold text-lg transition-all duration-300 rounded-xl ${
                 isScrolled
                   ? 'text-gray-800 hover:bg-gradient-to-r hover:from-[#450099]/10 hover:via-[#9C2163]/10 hover:to-[#FF0020]/10 hover:text-[#450099]'
                   : 'text-white hover:bg-[#450099]/10 hover:text-white' 
@@ -162,14 +161,11 @@ export default function Navbar() {
               {item.name}
             </a>
           ))}
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-4"></div>
           
-          {/* ✅ Get Started Button (Mobile) */}
           <button
-            type="button"
-            className={`w-full mt-2 font-poppins font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] text-white hover:opacity-90 hover:shadow-2xl pointer-events-auto cursor-pointer`}
+            className="w-full mt-4 font-poppins font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg bg-gradient-to-r from-[#450099] via-[#9C2163] to-[#FF0020] text-white hover:opacity-90 hover:shadow-2xl"
             onClick={() => {
-              console.log('Mobile Get Started clicked!'); // 🔍 Debug log
+              console.log('Mobile Get Started clicked!');
               handleButtonClick('#events');
             }}
           >
